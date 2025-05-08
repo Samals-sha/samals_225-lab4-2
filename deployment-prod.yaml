@@ -10,7 +10,7 @@ spec:
   accessModes:
     - ReadWriteMany
   nfs:
-    path:  /srv/nfs/samals         #local reference
+    path:  /srv/nfs/roseaw          #local reference
     server: 10.48.10.140
   persistentVolumeReclaimPolicy: Retain
 ---
@@ -46,7 +46,7 @@ spec:
     spec:
       containers:
         - name: flask
-          image: cithit/samals
+          image: cithit/roseaw
           ports:
             - containerPort: 5000
           volumeMounts:
@@ -63,7 +63,7 @@ metadata:
   name: flask-prod-service
 spec:
   type: LoadBalancer 
-  loadBalancerIP: 10.48.10.176                                    
+  loadBalancerIP: 10.48.10.116                                    
   ports:
   - protocol: TCP
     port: 80
